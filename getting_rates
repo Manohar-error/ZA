@@ -1,0 +1,30 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "pickup_pincode": "body.collection_address.code",
+      "drop_pincode": "body.delivery_address.code",
+      "parcels": {
+        "*": {
+          "length_cm": "body.parcels[&1].submitted_length_cm",
+          "width_cm": "body.parcels[&1].submitted_width_cm",
+          "height_cm": "body.parcels[&1].submitted_height_cm",
+          "weight_kg": "body.parcels[&1].submitted_weight_kg"
+        }
+      },
+      "invoice_value": "body.declared_value"
+    }
+  },
+  {
+    "operation": "default",
+    "spec": {
+      "base_url": "https://api.shiplogic.com",
+      "method": "POST",
+      "path": "/v2/rates",
+      "headers": {
+        "Authorization": "Bearer a601d99c75fc4c64b5a64288f97d52b4",
+        "Content-Type": "application/json"
+      }
+    }
+  }
+]
