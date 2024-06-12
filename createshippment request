@@ -1,0 +1,62 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "shipmentFrom": {
+        "company": "body.collection_address.company",
+        "street_address": "body.collection_address.street_address",
+        "local_area": "body.collection_address.local_area",
+        "city": "body.collection_address.city",
+        "zone": "body.collection_address.zone",
+        "country": "body.collection_address.country",
+        "code": "body.collection_address.code",
+        "name": "body.collection_contact.name",
+        "phoneNumber": "body.collection_contact.mobile_number",
+        "email": "body.collection_contact.email"
+      },
+      "shipmentTo": {
+        "company": "body.delivery_address.company",
+        "street_address": "body.delivery_address.street_address",
+        "local_area": "body.delivery_address.local_area",
+        "city": "body.delivery_address.city",
+        "zone": "body.delivery_address.zone",
+        "country": "body.delivery_address.country",
+        "code": "body.delivery_address.code",
+        "name": "body.delivery_contact.name",
+        "phoneNumber": "body.delivery_contact.mobile_number",
+        "email": "body.delivery_contact.email"
+      },
+      "parcel": {
+        "*": {
+          "parcel_description": "body.parcels[&1].parcel_description",
+          "submitted_length_cm": "body.parcels[&1].submitted_length_cm",
+          "submitted_width_cm": "body.parcels[&1].submitted_width_cm",
+          "submitted_height_cm": "body.parcels[&1].submitted_height_cm",
+          "submitted_weight_kg": "body.parcels[&1].submitted_weight_kg"
+        }
+      },
+      "declared_value": "body.declared_value",
+      "custom_tracking_reference": "body.custom_tracking_reference",
+      "customer_reference": "body.reference",
+      "special_instructions_collection": "body.instructions_collection",
+      "special_instructions_delivery": "body.instructions_delivery",
+      "service_level_code": "body.service_level_code",
+      "provider_slug": "body.provider_slug",
+      "collection_min_date": "body.collection_min_date",
+      "collection_after": "body.collection_after",
+      "collection_before": "body.collection_before"
+    }
+  },
+  {
+    "operation": "default",
+    "spec": {
+      "base_url": "https://api.shiplogic.com",
+      "method": "POST",
+      "path": "/v2/shipments",
+      "headers": {
+        "Authorization": "Bearer a601d99c75fc4c64b5a64288f97d52b4",
+        "Content-Type": "application/json"
+      }
+    }
+  }
+]
