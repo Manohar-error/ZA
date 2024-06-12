@@ -1,0 +1,121 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "id": "id",
+      "account_id": "account_id",
+      "rates": {
+        "*": {
+          "value": "billing_transactions[&2].amount",
+          "vat": "billing_transactions[&2].vat"
+        }
+      },
+      "account": {
+        "account_code": "billing_transactions.account_code"
+      },
+      "short_tracking_reference": "trackingCode",
+      "customer_reference": "reference",
+      "status": "status",
+      "special_instructions_collection": "meta.instructions_collection",
+      "special_instructions_delivery": "meta.instructions_delivery",
+      "service_level_code": "meta.provider_service_level_code",
+      "collection_branch_id": "meta.sl_collection_branch",
+      "delivery_branch_id": "meta.sl_delivery_branch",
+      "original_collection_agent_id": "meta.sl_collection_agent_id",
+      "original_delivery_agent_id": "meta.sl_delivery_agent_id",
+      "collection_agent_zone": "meta.sl_collection_agent_zone",
+      "delivery_agent_zone": "meta.sl_delivery_agent_zone",
+      "delivery_agent_routing_number": "meta.sl_delivery_agent_routing_number",
+      "original_estimated_collection": "meta.estimated_collection_date",
+      "estimated_delivery_to": "meta.estimated_delivery_date",
+      "created_by": "created_by",
+      "time_created": "created_at",
+      "time_modified": "modified_at",
+      "collection_min_date": "pickup.collection_min_date",
+      "collection_after": "pickup.collection_after",
+      "collection_before": "pickup.collection_before",
+      "delivery_address": {
+        "name": "toaddress.name",
+        "mobile_number": "toaddress.mobile_number",
+        "email": "toaddress.email",
+        "entered_address": "toaddress.entered_address",
+        "hash": "toaddress.hash",
+        "status": "toaddress.status",
+        "street_address": "toaddress.street_address",
+        "code": "toaddress.code",
+        "city": "toaddress.city",
+        "zone": "toaddress.zone",
+        "country": "toaddress.country",
+        "lat": "toaddress.lat",
+        "lng": "toaddress.lng"
+      },
+      "collection_address": {
+        "name": "fromAddress.name",
+        "mobile_number": "fromAddress.mobile_number",
+        "email": "fromAddress.email",
+        "entered_address": "fromAddress.entered_address",
+        "hash": "fromAddress.hash",
+        "status": "fromAddress.status",
+        "street_address": "fromAddress.street_address",
+        "local_area": "fromAddress.local_area",
+        "code": "fromAddress.code",
+        "city": "fromAddress.city",
+        "zone": "fromAddress.zone",
+        "country": "fromAddress.country",
+        "lat": "fromAddress.lat",
+        "lng": "fromAddress.lng"
+      },
+      "parcels": {
+        "*": {
+          "tracking_reference": "parcels[0].provider_tracking_reference",
+          "tracking_reference": "parcels[0].tracking_reference",
+          "submitted_height_cm": "parcels[0].submitted_height_cm",
+          "submitted_length_cm": "parcels[0].submitted_length_cm",
+          "submitted_width_cm": "parcels[0].submitted_width_cm",
+          "submitted_weight_kg": "parcels[0].submitted_weight_kg",
+          "charged_weight": "parcels[0].charged_weight_kg",
+          "declared_value": "parcels[0].declared_value",
+          "actual_length_cm": "parcels[0].actual_length_cm",
+          "actual_width_cm": "parcels[0].actual_width_cm",
+          "actual_height_cm": "parcels[0].actual_height_cm",
+          "actual_weight_kg": "parcels[0].actual_weight_kg",
+          "time_created": "parcels[0].created_at"
+        }
+      }
+    }
+  },
+  {
+    "operation": "default",
+    "spec": {
+      "billing_transactions.type": "shipping-charge",
+      "billing_transactions.shipment_reference": "UASDRHRH",
+      "billing_transactions.description": "",
+      "billing_transactions.order_number": null,
+      "billing_transactions.time_created": "2024-06-11T13:12:40.574693Z",
+      "billing_transactions.time_modified": "2024-06-11T13:12:40.57634Z",
+      "billing_transactions.ua_doc_number": "",
+      "billing_transactions.provider_doc_number": "",
+      "billing_transactions.payment_id": null,
+      "billing_transactions.payment": null,
+      "billing_transactions.payment_provider_id": null,
+      "meta.custom_order_number": "Order111",
+      "meta.health_status_reason": "",
+      "meta.sl_delivery_agent_routing_number": "C1234",
+      "is_return": false,
+      "submission_status": "success",
+      "parcel_count": 1,
+      "provider.id": 1,
+      "provider.name": "Demo Couriers",
+      "provider.slug": "demo",
+      "selectedRate.carrier": "",
+      "selectedRate.code": "ECO",
+      "selectedRate.name": "Economy",
+      "selectedRate.description": "Delivery time varies between 72 and 96 hours depending on destination address.",
+      "selectedRate.type": "economy",
+      "selectedRate.delivery_type": "door",
+      "selectedRate.rate": 119.31,
+      "selectedRate.rate_excl_vat": 103.75,
+      "selectedRate.currency": "ZAR"
+    }
+  }
+]
