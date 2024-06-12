@@ -3,7 +3,9 @@
     "operation": "shift",
     "spec": {
       "pickup_pincode": "body.collection_address.code",
+      "pickup_suburb": "body.collection_address.city",
       "drop_pincode": "body.delivery_address.code",
+      "drop_suburb": "body.delivery_address.city",
       "parcels": {
         "*": {
           "length_cm": "body.parcels[&1].submitted_length_cm",
