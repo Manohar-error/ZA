@@ -30,7 +30,7 @@
     "operation": "default",
     "spec": {
       "*": {
-        "carrier": "Courier Guy",
+        "carrier": "",
         "currency": "Placeholder Currency",
         "delivery_days": null,
         "est_delivery_days": null,
