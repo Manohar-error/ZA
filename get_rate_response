@@ -1,0 +1,41 @@
+[
+  {
+    "operation": "modify-overwrite-beta",
+    "spec": {
+      "rates": {
+        "*": {
+          "rate": "=toString"
+        }
+      }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "rates": {
+        "*": {
+          "rate": "[&1].rate",
+          "rate_excluding_vat": "[&1].rateexcl_vat",
+          "charged_weight": "[&1].charged_weight_kg",
+          "service_level": {
+            "code": "[&2].service_level.code",
+            "name": "[&2].service_level.name",
+            "description": "[&2].service_level.description"
+          }
+        }
+      }
+    }
+  },
+  {
+    "operation": "default",
+    "spec": {
+      "*": {
+        "carrier": "Courier Guy",
+        "currency": "Placeholder Currency",
+        "delivery_days": null,
+        "est_delivery_days": null,
+        "carrier_account_id": "ca_9685a1198a75477885a3cdca37559bac"
+      }
+    }
+  }
+]
